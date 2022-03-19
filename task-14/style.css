@@ -1,151 +1,114 @@
-html {
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  body {
+* {
+    box-sizing: border-box;    
+}
+
+body {
     margin: 0;
-    font-family: "Roboto", sans-serif;
-    font-family: "Roboto Condensed", sans-serif;
-    font-family: "Roboto Slab", serif;
-    font-size: 14px;
-    line-height: 28px;
-  }
-  
-  .header {
-      min-height: 120px;
-      padding-top: 10px;
-      margin: 0;
-      background: white;
-  }
-  
-  .container {
-    max-width: 1110px;
-    margin: 0 auto;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
-  }
-  .header-logo {
-      max-width: 350px;
-      max-height: 150px;
-  }
-  .logo-img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  .header-menu {
-    max-width: 850px;
+    color: #000;
+    
+}
+.logo__logo-text {
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    margin: 8px;
+    font-size: 25px;
+}
+
+.logo__name {
+    display: inline;
+    margin: 10px;
+}
+
+.link__item {
     margin: 0;
     padding: 0;
-    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    text-align: right;
-  }
-  .header-menu-item + .header-menu-item {
-    margin-right: 25px;
-  }
-  .header-menu-item:nth-child(1) {
-    margin-right: 25px;
-  }
-  .header-menu-item :hover {
-    color: #3a3939;
-    
-  }
-  .header-menu-link {
-  font-family: "Roboto Condensed";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 16px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: gray;
-  }
-  
-  /*burger button */
-  .menu-btn {
-      width: 40px;
-      height: 38px;
-      position: relative;
-      border: 2px solid black;
-      border-color: black;
-      border-radius: 3px;
-      display: none; 
-  }
-  .menu-btn span {
-      width: 30px;
-      height: 3px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: black;
-  }
-  .menu-btn span:nth-of-type(2) {
-      top: calc(50% - 5px);
-  }
-  .menu-btn span:nth-of-type(3) {
-      top: calc(50% + 5px);
-  }
-  
-  
-  /*--------------*/
-  /* mobile display*/
-  @media screen and (max-width: 767px) {
-  
-  .container {
-      z-index: 3;
-      }
-  .header-logo {
-      max-width: 300px;
-      max-height: 100px;
-  }    
-   .menu-btn {
-      display: block;
-      width: 65px;
-      cursor: pointer;
-      position: relative;
-  }
-  .header-nav {
-      display: none;
-      position: fixed;
-      top: 125px;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      color: white;
-      list-style: none;   
-  }
-  
-  .header-menu-link {
-      font-family: "Roboto Condensed";
-      font-style: normal;
-      font-weight: bold;
-      font-size: 26px;
-      line-height: 18px;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: block;
-      padding: 15px 0px 15px 0px;
-      text-align: center;
-      align-items: center;    
-  }
-  .header-menu-item {
-      width: 100%;
-      margin: 0;
-  }
-  .header-menu-item :hover {
-      color: black;
-      background-color: yellow;
-  
-  }
-  
-  }
+    list-style: none;
+}
+
+.link__items {
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+    display: block;
+}
+
+.link__items:hover {
+    background-color: yellow;
+}
+.active {
+    font-weight: bold;
+}
+
+.toggle__button {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+@media (max-width: 930px) {
+    .toggle__button {
+        display: flex;
+    }
+    .navbar__links {
+        display: none;
+        width: 100%;
+        background: #000;
+        
+
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .link__item {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .link__items {
+        padding: 10px 16px;
+        color: #fff;
+    }
+    .link__items:hover {
+        color: #000;
+    }
+
+    .navbar__links.active {
+        display: flex;
+    }
+}
+
+
+
+
+
